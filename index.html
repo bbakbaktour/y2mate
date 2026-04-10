@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>YouTube Downloader</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a2e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial;
+  color: white;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+input {
+  width: 300px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #00f5ff;
+  color: black;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #00c3cc;
+  transform: scale(1.05);
+}
+
+.glow {
+  text-shadow: 0 0 10px #00f5ff, 0 0 20px #00f5ff;
+}
+
+.loading {
+  display: none;
+  margin-top: 10px;
+  color: #00f5ff;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+  <h1 class="glow">YOUTUBE DOWNLOADER</h1>
+
+  <form action="/download" method="post" onsubmit="showLoading()">
+    <input name="url" placeholder="유튜브 링크 붙여넣기" required>
+    <br>
+    <button type="submit">다운로드</button>
+  </form>
+
+  <div class="loading" id="loading">다운로드 중...</div>
+</div>
+
+<script>
+function showLoading() {
+  document.getElementById("loading").style.display = "block";
+}
+</script>
+
+</body>
+</html>s
