@@ -25,4 +25,9 @@ def download():
         if file.startswith("downloaded") and file.endswith(".mp4"):
             return send_file(file, as_attachment=True)
 
-app.run(debug=True)
+# --- 이 아랫부분이 수정되었습니다 ---
+if __name__ == '__main__':
+    # Render는 PORT 환경 변수를 통해 포트를 지정해줍니다.
+    # host를 '0.0.0.0'으로 설정해야 외부 접속이 가능합니다.
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host='0.0.0.0', port=port)
